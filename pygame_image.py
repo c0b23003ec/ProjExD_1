@@ -31,7 +31,7 @@ def main():
         if key_lst[pg.K_UP]:
             koukaton_rect.move_ip((0, -1))
         if key_lst[pg.K_DOWN]:
-            koukaton_rect.move_ip((0, 100))
+            koukaton_rect.move_ip((0, 25))
         if key_lst[pg.K_RIGHT]:
             koukaton_rect.move_ip((1, 0))
         if key_lst[pg.K_LEFT]:
