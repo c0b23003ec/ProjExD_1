@@ -21,27 +21,47 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        move_x = 0
+        move_y = 0
 
         key_lst = pg.key.get_pressed()
         #print(key_lst[pg.K_UP])
         #print(key_lst[pg.K_DOWN])
         #print(key_lst[pg.K_RIGHT])
         #print(key_lst[pg.K_LEFT])
-        x = -(tmr%3200)
+        
+
+        #if key_lst[pg.K_UP]:
+         #   koukaton_rect.move_ip((0, -1))
+        #elif key_lst[pg.K_DOWN]:
+         #   koukaton_rect.move_ip((0, 1))
+        #elif key_lst[pg.K_RIGHT]:
+         #   koukaton_rect.move_ip((1, 0))
+        #elif key_lst[pg.K_LEFT]:
+         #   koukaton_rect.move_ip((-1, 0))
+        #else:
+         #   koukaton_rect.move_ip(-(1, 0))
 
         if key_lst[pg.K_UP]:
-            koukaton_rect.move_ip((0, -1))
+            move_x = -1
+            move_y = -1
         elif key_lst[pg.K_DOWN]:
-            koukaton_rect.move_ip((0, 1))
+            move_x = -1
+            move_y = 1
         elif key_lst[pg.K_RIGHT]:
-            koukaton_rect.move_ip((1, 0))
+            move_x = 1
         elif key_lst[pg.K_LEFT]:
-            koukaton_rect.move_ip((-1, 0))
+            move_x = -1
         else:
-            koukaton_rect.move_ip((-1, 0))
+            move_x = -1
+
+        
+        
+        koukaton_rect.move_ip(move_x, move_y)
 
 
-        #x = -(tmr%3200)
+
+        x = -(tmr%3200)
         screen.blit(bg_img,  [x, 0])
         screen.blit(bg_img_flipped, [x+1600, 0])
         screen.blit(bg_img,  [x+3200, 0])
