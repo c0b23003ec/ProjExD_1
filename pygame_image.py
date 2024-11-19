@@ -27,17 +27,21 @@ def main():
         #print(key_lst[pg.K_DOWN])
         #print(key_lst[pg.K_RIGHT])
         #print(key_lst[pg.K_LEFT])
+        x = -(tmr%3200)
 
         if key_lst[pg.K_UP]:
             koukaton_rect.move_ip((0, -1))
-        if key_lst[pg.K_DOWN]:
+        elif key_lst[pg.K_DOWN]:
             koukaton_rect.move_ip((0, 1))
-        if key_lst[pg.K_RIGHT]:
+        elif key_lst[pg.K_RIGHT]:
             koukaton_rect.move_ip((1, 0))
-        if key_lst[pg.K_LEFT]:
+        elif key_lst[pg.K_LEFT]:
+            koukaton_rect.move_ip((-1, 0))
+        else:
             koukaton_rect.move_ip((-1, 0))
 
-        x = -(tmr%3200)
+
+        #x = -(tmr%3200)
         screen.blit(bg_img,  [x, 0])
         screen.blit(bg_img_flipped, [x+1600, 0])
         screen.blit(bg_img,  [x+3200, 0])
